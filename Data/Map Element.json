@@ -1,0 +1,38 @@
+{
+    "m" : {
+        "Symbol" : "∆",
+        "Foreground": "RED",
+        "Background": "RED",
+        "Name": "Montagne",
+        "CanWalk": false
+    },
+    "e" : {
+        "Symbol" : "Í",
+        "Foreground" : "BLUE",
+        "Background" : "BLUE",
+        "Name" : "Eau",
+        "CanWalk": false
+
+    },
+    "j" : {
+        "Symbol": "ͳ",
+        "Foreground": "GREEN",
+        "Background": "GREEN",
+        "Name": "Jungle",
+        "CanWalk": true
+    },
+    "p": {
+        "Symbol": "░",
+        "Foreground": "YELLOW",
+        "Background": "YELLOW",
+        "Name": "Plage",
+        "CanWalk": true
+    },
+    "X" : {
+        "Symbol": "X",
+        "Foreground": "PURPLE",
+        "Background": "WHITE",
+        "Name": "Quête",
+        "CanWalk": true
+    }
+}

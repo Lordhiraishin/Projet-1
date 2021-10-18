@@ -3,6 +3,7 @@
 # Imports
 import json
 import random
+import time
 
 # Variables
 
@@ -36,81 +37,86 @@ while GoodAnswer == True:
         # print(listPlayer)
         
 
-    FirstPlayer = random.randint(0,len(listPlayer)-1)
-    print(f"Le premier joueur est {listPlayer[FirstPlayer]}")
+        FirstPlayer = random.randint(0,len(listPlayer)-1)
+        print(f"Le premier joueur est {listPlayer[FirstPlayer]}")
 
-    PremierChiffre = 1
+        PremierChiffre = 1
 
-    print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
+        print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
 
-    GameTurn = True
-    while GameTurn == True:
+        GameTurn = True
+        while GameTurn == True:
 
-        if FirstPlayer >= len(listPlayer)-1:
-            FirstPlayer = 0
-        else:
-            FirstPlayer += 1
+            if FirstPlayer >=  len(listPlayer)-1:
+                FirstPlayer = 0
+            else:
+                FirstPlayer += 1
 
-        PremierChiffre +=1
+            PremierChiffre +=1
 
 
-        # ChanceSinge = random.randint(FizzbuzzPlayers[10][players]["ChanceMin"],FizzbuzzPlayers[players]["ChanceMax"])
-        # ChanceChefSinge = random.randint(FizzbuzzPlayers[9][players]["ChanceMin"],FizzbuzzPlayers[players]["ChanceMax"])
-        # ChancePlayer = random.randint(FizzbuzzPlayers[0][players]["ChanceMin"],FizzbuzzPlayers[players]["ChanceMax"])
-        # print(ChanceChefSinge)
-        # print(ChancePlayer)
-        # print(ChanceSinge)
+            ChanceSinge = random.randint(FizzbuzzPlayers[5]["ChanceMin"],FizzbuzzPlayers[5]["ChanceMax"])
+            ChanceChefSinge = random.randint(FizzbuzzPlayers[10]["ChanceMin"],FizzbuzzPlayers[10]["ChanceMax"])
+            ChancePlayer = random.randint(FizzbuzzPlayers[0]["ChanceMin"],FizzbuzzPlayers[0]["ChanceMax"])
+            # print(ChanceChefSinge)
+            # print(ChancePlayer)
+            # print(ChanceSinge)
 
-        ChanceSinge = 30
-        ChanceChefSinge = 70
-        ChancePlayer = 80
-        chance = random.randint(0,100)
+            # ChanceSinge = 30
+            # ChanceChefSinge = 70
+            # ChancePlayer = 80
+            chance = random.randint(0,100)
 
-        if len(listPlayer) > 1:
+            if len(listPlayer) > 1:
 
-            if listPlayer[FirstPlayer] == FizzbuzzPlayers[10]["Name"]:
-                if chance > ChanceChefSinge:
-                    print("Le chef singe à perdu !")
-                    listPlayer.pop(FirstPlayer)
-                else:
-                    if PremierChiffre%3 == 0 and PremierChiffre%5 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {FizzBuzz}")
-                    elif PremierChiffre%3 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {Fizz}")
-                    elif PremierChiffre%5 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {Buzz}")
+                if listPlayer[FirstPlayer] == FizzbuzzPlayers[10]["Name"]:
+                    if chance > ChanceChefSinge:
+                        print("Le chef singe à perdu !")
+                        listPlayer.pop(FirstPlayer)
                     else:
-                        print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
-            elif listPlayer[FirstPlayer] == FizzbuzzPlayers[0]["Name"]:
-                if ChancePlayer < chance:
-                    print(f"{listPlayer[FirstPlayer]} a perdu ! ")
-                    print(f"Vous avez perdu le FizzBuzz")
-                    listPlayer.pop(FirstPlayer)
-                else:
-                    if PremierChiffre%3 == 0 and PremierChiffre%5 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {FizzBuzz}")
-                    elif PremierChiffre%3 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {Fizz}")
-                    elif PremierChiffre%5 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {Buzz}")
+                        if PremierChiffre%3 == 0 and PremierChiffre%5 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {FizzBuzz}")
+                        elif PremierChiffre%3 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {Fizz}")
+                        elif PremierChiffre%5 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {Buzz}")
+                        else:
+                            print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
+                elif listPlayer[FirstPlayer] == FizzbuzzPlayers[0]["Name"]:
+                    if ChancePlayer < chance:
+                        print(f"{listPlayer[FirstPlayer]} a perdu ! ")
+                        print(f"Vous avez perdu le FizzBuzz")
+                        listPlayer.pop(FirstPlayer)
                     else:
-                        print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
-            elif listPlayer[FirstPlayer] == FizzbuzzPlayers[5]["Name"]:
-                if ChanceSinge < chance:
-                    print(f"{listPlayer[FirstPlayer]} a perdu ! ")
-                    listPlayer.pop(FirstPlayer)
-                else:
-                    if PremierChiffre%3 == 0 and PremierChiffre%5 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {FizzBuzz}")
-                    elif PremierChiffre%3 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {Fizz}")
-                    elif PremierChiffre%5 == 0:
-                        print(f"{listPlayer[FirstPlayer]} dit : {Buzz}")
+                        if PremierChiffre%3 == 0 and PremierChiffre%5 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {FizzBuzz}")
+                        elif PremierChiffre%3 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {Fizz}")
+                        elif PremierChiffre%5 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {Buzz}")
+                        else:
+                            print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
+                else: 
+                    if ChanceSinge < chance:
+                        print(f"{listPlayer[FirstPlayer]} a perdu ! ")
+                        listPlayer.pop(FirstPlayer)
                     else:
-                        print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
+                        if PremierChiffre%3 == 0 and PremierChiffre%5 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {FizzBuzz}")
+                        elif PremierChiffre%3 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {Fizz}")
+                        elif PremierChiffre%5 == 0:
+                            print(f"{listPlayer[FirstPlayer]} dit : {Buzz}")
+                        else:
+                            print(f"{listPlayer[FirstPlayer]} dit : {PremierChiffre}")
 
-                print(listPlayer)
-
-        else:
-            print(f"Le vainqueur est : {listPlayer[FirstPlayer]}")
+                    print(listPlayer)
+                
+        
+            else:
+                print(f"Le vainqueur est : {listPlayer[FirstPlayer]}")
+                break
             break
+                    
+    time.sleep(0.5)    
+                  

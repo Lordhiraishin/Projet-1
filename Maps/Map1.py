@@ -3,7 +3,7 @@
 
 #Import
 import os, sys
-
+import RichConsole
 
 # os.system('')
 

@@ -1,44 +1,41 @@
-# coding: utf-8
-
-# imports
+import RichConsole as RC
+from typing import Text
 import json
-# import Variables as Var
-# import RichConsole as RC
+import Variables as Var
 
-# variables
+with open ("DessinCarte","r",encoding = "utf-8") as MyFile:
+    MapData = MyFile.readlines()
 
-# functions
-def LoadFromFile(map1):
-    """
-        Load map from text file
-        Map with specified number from MapFolder
-        MapNumber -> int : number of the map to load
-    """
-    #  try:
-    #     # load map data from text file
-    #     with open(f"{Var.MapFolder}Map {MapNumber}", "r", encoding="utf-8") as MyFile:
-    #         MapData = MyFile.readlines()
+Symbol = Var.PlayerData["Symbol"]
+FG = Var.PlayerData["Foreground"]
+BG = Var.PlayerData["Background"]
+# MapElement = Var.MapElements['Symbol']
+# print(MapElement)
+
+#load map from textfile
+
+def drawmap():
+    for i in MapData:
+        for j in i:
+            element = j
+            if element == "m":
+                print("∆",end="")
+            elif element == "j":
+                print("ͳ", end="")
+            elif element == "e":
+                print("Í", end = "")
+            elif element == "p":
+                print("░",end = "")
+            elif element == "X":
+                print("x",end = "")
+            elif element == "":
+                print("\n")
 
 
 
-    def DrawMap():
-        """
-            Draw map on screen from MapData 2D list
-        """
+if __name__ == "__main__":
+    drawmap()
 
-        RC.ClearConsole()
 
-        # each line in 2D list
-        for Y, Line in enumerate(Var.MapData):
-            # for each column in current line
-            for X, Character in enumerate(Line):
-                # get map element data from dictionnary
-                # matching current character in 2D list
-                MapElement = Var.MapElements[Character]
-                # print map element at coordinates
-                RC.ColorPrintAt(
-                    MapElement["Symbol"],
-                    MapElement["Foreground"],
-                    MapElement["Background"],
-                    Y+1,
-                    X+1)
+# def drawplayer():
+#     RC.ColorPrintAt(Symbol,y=Var.PlayerData["Y"],x=Var.PlayerData["X"])

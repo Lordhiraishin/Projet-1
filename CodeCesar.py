@@ -3,6 +3,8 @@
 #Imports
 from os import replace
 import random
+import json
+import Variables
 
 #Variables
 PlayerName = ""
@@ -20,6 +22,9 @@ tryNumber = 0
 
 #functions
 def CodeCesar():
+    """
+    launch the Code Cesar quest
+    """
 
     print("Au nord de la plage, tu trouves un petit temple taillé dans la paroi rocheuse. Au-dessus de l’arche d’entrée, est  écrit un message dans une langue apparemment inconnue mais utilisant l’alphabet habituel. ")
     print("Sur les colonnes de l’arche, sont d’ailleurs gravées en relief toutes les lettres de l’alphabet. Curieux, tu appuies au  hasard sur l’une des lettres et tu t’aperçois que les lettres formant le message changent. Malgré cela, le message  en lui-même reste incompréhensible. En effectuant plusieurs tests, tu te rends compte qu’a une lettre définie  correspond une composition spécifique du message. Ne voyant pas trop quoi faire d’autre pour le moment, tu  décides d’entrer dans le temple")
@@ -81,6 +86,7 @@ def CodeCesar():
         if CodedUserName == input("Quel est ton nom codé?"):
             print("félicitation, tu as gagné la deuxième clé")
             CorrectAnswer == True
+            Variables.Key2 == True
             break
         else:
             print("non, essaye encore")

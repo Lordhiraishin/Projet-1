@@ -2,6 +2,7 @@
 
 #Import
 import random 
+import Variables
 
 #Variables
 
@@ -12,6 +13,9 @@ Reset = False
 
 # Start the story of the quest
 def NombreMysterieux():
+    """
+    Launch the guess number quest
+    """
 
     print("En haut de la falaise, en bordure de forêt et pas très loin de la plage, tu découvres la statue d’un Sphinx avec une  grosse clé en bronze posée sur les pattes.")
     print("Lorsque tu t’en approches, les yeux de la statue s’illuminent et une voix se fait entendre :")
@@ -54,3 +58,7 @@ def NombreMysterieux():
         print("Félicitations, il ne t'a fallu que ", end="" )
         print(NbEssai, end="")
         print(" Essais. La clé est tienne")
+        Variables.Key1 = True
+
+if __name__ == "__main__":
+    NombreMysterieux()

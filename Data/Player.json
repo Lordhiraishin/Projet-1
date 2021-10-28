@@ -4,5 +4,6 @@
     "Background": "Black",
     "X": 48,
     "Y": 27,
-    "LastDirection": ""
+    "LastDirection": "",
+    "NumberKey": 0
 }

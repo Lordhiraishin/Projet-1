@@ -25,18 +25,7 @@ Position_Suffix = "H"
 
 
 # Functions
-def Main():
-    os.system("")
-    ClearConsole()
-    print ("Blanc sur noir")
-    # print (f"{Prefix}{FG}{BLUE}{Style_Suffix}Bleu sur noir{Prefix}{Reset}{Style_Suffix}")
-    # print (f"{Prefix}{FG}{RED}{Style_Suffix}Rouge sur noir{Prefix}{Reset}{Style_Suffix}")
-    # print (f"{Prefix}{FG}{RED};{BG}{GREEN}{Style_Suffix}Rouge sur vert{Prefix}{Reset}{Style_Suffix}")
-    # print (f"{Prefix}{BG}{GREEN}{Style_Suffix}Blanc sur vert{Prefix}{Reset}{Style_Suffix}")
-    ColorPrintAt("Bleu sur noir en 1,1", "BLUE", Y=1, X=1)
-    ColorPrintAt("Rouge sur noir en 3,10", "RED", Y=3, X=10)
-    ColorPrintAt("Rouge sur vert à la suite", "RED", "GREEN")
-    ColorPrintAt("Blanc sur vert en 2,30", BG="GREEN", Y=2, X=30)
+
 
 
 def ColorPrintAt(
@@ -85,8 +74,12 @@ def ClearConsole():
         # for linux
         os.system("clear")
 
+def position(x: int, y: int, text: str) -> str:
+    """
+    Permet d'afficher un texte aux coordonnées x et y
+    """
+    return f"\033[{y};{x}H{text}"
+
 
 
 # Code starts here
-if __name__ == "__main__":
-    Main()

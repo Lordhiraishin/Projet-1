@@ -39,3 +39,9 @@ if __name__ == "__main__":
 
 # def drawplayer():
 #     RC.ColorPrintAt(Symbol,y=Var.PlayerData["Y"],x=Var.PlayerData["X"])
+
+
+3/26
+3/49
+21/14
+26/27

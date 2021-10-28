@@ -1,28 +1,36 @@
 # coding utf-8
 
 # Imports
+from Map1 import Drawmap
+from Player import Draw, Move, PlayerX, PlayerY
+from CodeCesar import CodeCesar
+from NombreMysterieux import NombreMysterieux
+from Fizzbuzz import FizzBuzz
+import Variables
+from RichConsole import position
 
 # Variables
+
 
 # Functions
 
 
-from Fizzbuzz import FizzBuzz
-from Map1 import Drawmap
-from Player import Draw, Move
-from CodeCesar import CodeCesar
-from NombreMysterieux import NombreMysterieux
+
+
 
 
 def main():
 
-    Drawmap()
-    Draw()
-    Direction = input("Quelle direction voulez vous prendre")
-    Move(Direction)
-    # FizzBuzz()
-    # CodeCesar()
-    # NombreMysterieux()
+    while Variables.GameIsRunning == True:
+
+        Drawmap()
+        Draw()
+        Move()
+        
+
+        # FizzBuzz()
+        # CodeCesar()
+        
     
    
 

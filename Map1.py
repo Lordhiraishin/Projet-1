@@ -9,7 +9,10 @@ import Variables
 # os.system('')
 
 def Drawmap():
+    """
+    Print the map, taking info from matrix and atributing value to variable
 
+    """
 #variables    
     montagne = "\x1b[41m \x1b[0m"
     jungle = "\x1b[42m \x1b[0m"
